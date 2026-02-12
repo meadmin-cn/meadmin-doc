@@ -26,6 +26,9 @@ export default defineConfig({
         text: '后端文档',
         items: [
           { text: '介绍', link: '/server/guide' },
+          { text: '路由和控制器', link: '/server/controller' },
+          { text: 'Service服务', link: '/server/service' },
+
         ]
       },
       {

@@ -52,11 +52,13 @@ nodejs + vue 全栈一站式中后台解决方案
 │   │   ├──admin 后台接口模块
 │   │   │   ├── controller 模块控制器文件夹
 │   │   │   ├── dto 模块出入参dto类文件夹
-│   │   │   └── middleware 模块中间件夹
+│   │   │   ├── middleware 模块中间件夹
+│   │   │   └── service 模块service文件夹
 │   │   ├──index 前台接口模块
 │   │   │   ├── controller 模块控制器文件夹
 │   │   │   ├── dto 模块出入参dto类文件夹
-│   │   │   └── middleware 模块中间件夹
+│   │   │   ├── middleware 模块中间件夹
+│   │   │   └── service 模块service文件夹
 │   │   └──home.controller.ts 页面渲染控制器
 │   ├── config 配置文件夹
 │   ├── controller 公共控制器文件夹
