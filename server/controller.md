@@ -1,5 +1,7 @@
 ## 路由和控制器
-在常见的 MVC 架构中，C 即代表控制器，控制器用于负责 解析用户的输入，处理后返回相应的结果。请先阅读[midway 路由和控制器](https://midwayjs.org/docs/controller)章节再阅读本章节。
+在常见的 MVC 架构中，C 即代表控制器，控制器用于负责 解析用户的输入，处理后返回相应的结果。
+
+更多内容请阅读[midway 路由和控制器](https://midwayjs.org/docs/controller)文档。
 
 ## 定义路由可控制器
 用@Controller装饰器声明控制器类，@Get 、 @Post 、 @Put() 、 @Del() 、 @Patch() 、 @Options() 、 @Head() 和 @All()，表示各自的 HTTP 请求方法，声明路由方法。@All 装饰器比较特殊，表示能接受以上所有类型的 HTTP Method。midway 会自动扫描项目目录下的所有@Controller类进行路由注册。
@@ -7,7 +9,7 @@
 import { Controller, Get } from '@midwayjs/core';
 
 @Controller('/api/')
-export class HomeController {
+export class UserController {
 
   @Get('/home')
   async home(@Query('uid') uid: string) {
