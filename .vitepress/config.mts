@@ -29,6 +29,7 @@ export default defineConfig({
           { text: '路由和控制器', link: '/server/controller' },
           { text: 'Application 和 Context', link: '/server/applicationContext' },
           { text: 'Service服务', link: '/server/service' },
+          { text: '数据库', link: '/server/entity' },
 
         ]
       },
