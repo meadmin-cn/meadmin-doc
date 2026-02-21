@@ -27,6 +27,36 @@ export default defineConfig({
           { text: "前台", link: "/client/admin/guide/index" },
         ],
       },
+      {
+        text: "社区",
+        items: [
+          {
+            text: "QQ群：752939100",
+            link: "https://jq.qq.com/?_wv=1027&k=zSjWSant",
+          },
+        ],
+      },
+      {
+        text: "相关链接",
+        items: [
+          {
+            text: "预览",
+            link: "https://meadmin-cn.github.io/meadmin-template/",
+          },
+          {
+            text: "Github",
+            link: "https://github.com/meadmin-cn/meadmin",
+          },
+          {
+            text: "文档Github",
+            link: "https://github.com/meadmin-cn/meadmin-doc",
+          },
+          {
+            text: "文档",
+            link: "https://www.meadmin.cn/",
+          },
+        ],
+      },
     ],
     sidebar: [
       {
