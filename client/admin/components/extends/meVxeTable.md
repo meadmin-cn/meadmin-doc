@@ -1,5 +1,5 @@
 # vxeTable表格
-组件名`MeVxeTable`，对[vxe table](hhttps://vxetable.cn/)组件的封装，在保留原有功能的情况下，扩展了顶部工具栏、分页功能，并且保留`VxeTable`的 `props` 和 `emit` `type`提示。
+组件名`MeVxeTable`，对[vxe table](https://vxetable.cn/)组件的封装，在保留原有功能的情况下，扩展了顶部工具栏、分页功能，并且保留`VxeTable`的 `props` 和 `emit` `type`提示。
 
 ::: warning 注意
 - 扩展组件只存在`完整版`中，`基础模板`中不含有，如果想在基础模板中使用，请将对应文件粘贴到代码中使用。
@@ -13,11 +13,11 @@
 | props      | 类型 |说明|必填|
 | ----------- | ----------- | ----------- | ----------- |
 | name | string | 名称默认值为meVxeTable,会做为打印的表头和导出的文件名 | 否|
-| meClass|string \| string[]| 根元素上的class | 否 |
+| meClass|string | string[]| 根元素上的class | 否 |
 | exportMenu | `{label: string;filename?: string;handle: (vxeTable: VxeTableInstance, filename: string) => void \| 'csv' \| 'html' \| 'xml' \| 'txt'}[]` | 导出菜单默认值为 `[{ label: 'csv', handle: 'csv' },{ label: 'html', handle: 'html' },{ label: 'xml', handle: 'xml' },{ label: 'txt', handle: 'txt' }]` | 否|
 | print | boolean\|VxeTablePropTypes.PrintConfig | 打印配置，默认为{}，如果不想展示传入false | 否 |
 | customColumn | boolean |自定义列，默认为true | 否 |
-| defaultShowSearch | boolean | 默认是否展示 [筛选]() 默认值为false | 否 | 
+| defaultShowSearch | boolean | 默认是否展示 筛选 默认值为false | 否 | 
 | toolbar | boolean | 是否展示工具栏 默认为true,这里的工具栏是自行封装的工具栏非vxeToolbar | 否 |
 | quickSearch | string | 快捷搜索关键词 需要v-model绑定 | 否 |
 | quickSearchPlaceholder | string | 快捷搜索框placeholder,默认为快捷搜索 | 否 |
@@ -290,7 +290,7 @@ const getCascaderLabel = (value: any, list: any[]) => {
   const values: any[] = value || [];
   const labels: any[] = [];
   const matchCascaderData = function (index: any, list: any[]) {
-    const val = values[index];
+    const val = values[ index ];
     if (list && values.length > index) {
       list.forEach((item) => {
         if (item.value === val) {
@@ -383,5 +383,4 @@ const print = ref({} as object | boolean);
   }
 }
 </style>
-
 ```

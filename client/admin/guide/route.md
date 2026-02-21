@@ -115,12 +115,12 @@ export interface RouteMeta extends Record<string | number | symbol, unknown> {
 
 ### 菜单图标
 
-菜单图标定义值为图标组件的name,自定义svg图标和使用elment-plus图标请参考[图标](/guide/icon.md)
+菜单图标定义值为图标组件的name,自定义svg图标和使用elment-plus图标请参考[图标](./icon.md)
 
 ### keepAlive缓存
 
-页面缓存通过 组件[me-keep-alive](/guide/components/meKeepAlive.md)实现,通过路由的fullPath进行缓存过滤，所以无需对页面组件设置name,即可进行缓存，并且多路由共用同一页面组件时，可以进行独立刷新，互不影响。
+页面缓存通过 组件[me-keep-alive](../components/core/meKeepAlive.md)实现,通过路由的fullPath进行缓存过滤，所以无需对页面组件设置name,即可进行缓存，并且多路由共用同一页面组件时，可以进行独立刷新，互不影响。
 
 
- - 如果想全局禁用keppAlive，去`@/config/index.ts`配置`settingConfig.openKeepAlive`为`false`即可，配置详情参见[config](/guide/config.md#基础配置)。
+ - 如果想全局禁用keppAlive，去`@/config/index.ts`配置`settingConfig.openKeepAlive`为`false`即可，配置详情参见[config](./config.md#基础配置)。
  - 如需设置某个路由不缓存设置缓存值为`否`即可。

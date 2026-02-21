@@ -51,7 +51,7 @@ babelHelpers: 'runtime',
 
 解决方法：
 
-1.如果不需要按组件加载语言包,可设置配置项[`loadMessageConfig.componentLoad`](/guide/config.md#国际化配置)为`false`，则不会产生此警告。
+1.如果不需要按组件加载语言包,可设置配置项[`loadMessageConfig.componentLoad`](../guide/config.md#国际化配置)为`false`，则不会产生此警告。
 
 2.或者在`src/app.ts`设置[`app.config.warnHandler`](https://cn.vuejs.org/api/application.html#app-config-warnhandler)屏蔽掉对应wanging,代码示例：
 ```ts

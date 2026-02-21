@@ -1,0 +1,1 @@
+import{_ as n,o as a,c as p,ai as e}from"./chunks/framework.BdTV7y8C.js";const h=JSON.parse('{"title":"开发规范","description":"","frontmatter":{},"headers":[],"relativePath":"normalize.md","filePath":"normalize.md"}'),t={name:"normalize.md"};function o(i,s,l,c,u,r){return a(),p("div",null,[...s[0]||(s[0]=[e("",11)])])}const d=n(t,[["render",o]]);export{h as __pageData,d as default};

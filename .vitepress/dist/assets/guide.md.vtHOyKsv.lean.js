@@ -1,0 +1,1 @@
+import{_ as n,o as a,c as p,ai as e,al as l}from"./chunks/framework.BdTV7y8C.js";const m=JSON.parse('{"title":"介绍","description":"","frontmatter":{},"headers":[],"relativePath":"guide.md","filePath":"guide.md"}'),i={name:"guide.md"};function t(c,s,r,o,d,h){return a(),p("div",null,[...s[0]||(s[0]=[e("",20)])])}const u=n(i,[["render",t]]);export{m as __pageData,u as default};
