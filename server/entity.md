@@ -182,8 +182,6 @@ export class UserService {
     }
     return entity;
   }
-
-  
 }
 ```
 ## 模型关联
@@ -413,7 +411,102 @@ export class User extends Model<InferAttributes<User>, InferCreationAttributes<U
 ```
 相关参考[github](https://github.com/sequelize/sequelize/issues/17444)
 
+## 数据库操作
 
+```typescript
+import { InjectRepository } from '@/decorators/index.js';
+import { Provide } from '@midwayjs/core';
+import { BadRequestError } from '@midwayjs/core/dist/error/http.js';
+import { Op } from '@sequelize/core';
+import { User } from '../../../entities/user.entity.js';
 
+//用户
+@Provide()
+export class UserService {
+  @InjectRepository(User) //声明entity,默认加载default数据源相当于@InjectRepository(User,'default')
+  userRepository: typeof User;
 
+  /**
+   * 根据主键获取一条信息
+   * @param id 主键
+   * @returns
+   */
+  async findOne(id: string) {
+    // 查询
+    let result = await this.userRepository.findAll();
+    console.log(result);
 
+    // 新增
+    await this.userRepository.create({
+      nickname: '123',
+    });
+
+    // 删除
+    await this.userRepository.destroy({
+      where: {
+        nickname: '123',
+      },
+    });
+
+    // 联合查询
+    // SELECT * FROM photo WHERE name = "23" OR name = "34";
+    let result = await this.userRepository.findAll({
+      where: {
+        [Op.or]: [{ nickname: '23' }, { nickname: '34' }],
+      },
+    });
+    // => result
+
+    // 连表查询
+    const entity = await this.userRepository.findByPk(id, {
+      include: ['createdUser'],
+    });
+    if (!entity) {
+      throw new BadRequestError('没有对应的信息');
+    }
+    return entity;
+  }
+}
+```
+更多用法请查询：[seqlize文档](https://sequelize.org/docs/v7/category/querying/)
+## 事务
+本项目封装了`Transaction`装饰器，只需要添加上，即可在函数执行时应用`seqlize`的托管事务，事务会在函数，执行完毕后自动提交
+，异常时自动回滚。默认情况下，`Sequelize` 使用 `AsyncLocalStorage` 在函数及子函数调用中开始的所有查询中自动使用该活跃事务。更多请参考[seqlize文档](https://sequelize.org/docs/v7/querying/transactions/#managed-transactions-recommended)
+```typescript
+import { InjectRepository, Transaction } from '@/decorators/index.js';
+import { Provide } from '@midwayjs/core';
+import { User } from '../../../entities/user.entity.js';
+
+//用户
+@Provide()
+export class UserService {
+  @InjectRepository(User) //声明entity,默认加载default数据源相当于@InjectRepository(User,'default')
+  userRepository: typeof User;
+
+  async create(){
+     // 新增
+    await this.userRepository.create({
+      nickname: '123',
+    });
+  }
+  /**
+   * 根据主键获取一条信息
+   * @param id 主键
+   * @returns
+   */
+  @Transaction()
+  async findOne(id: string) {
+    // 查询
+    let result = await this.userRepository.findAll();
+    console.log(result);
+    await this.create();
+  }
+}
+```
+## 同步数据库结构
+
+- `pnpm exec meadmin sync *` 同步所有
+- 或 `pnpm meadmin sync exampleDemo,systemAdmin,exampleBook,user,file` 定向同步exampleDemo文件（定向同步文件时，需将关联依赖全部罗列出来，一起同步）
+
+## 更多特性
+连接池、自定义数据类型、读取复制、Hooks钩子等更多特性请参考[seqlize 文档](https://sequelize.org/docs/v7/category/other-topics/)

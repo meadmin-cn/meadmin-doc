@@ -15,7 +15,7 @@ hero:
       link: /server/guide
     - theme: alt
       text: 前端文档
-      link: /client/admin/guide
+      link: /client/admin/guide/index
 
 
 features:

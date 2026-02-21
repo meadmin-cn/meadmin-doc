@@ -95,7 +95,6 @@ nodejs + vue 全栈一站式中后台解决方案
 ├── view 前端文件夹根目录
 │   ├── admin 管理后台根目录
 │   │   ├── dist 打包文件夹
-│   │   ├── mock mock文件夹
 │   │   ├── plugins vite插件
 │   │   ├── public 公共静态资源目录
 │   │   ├── src  主目录
@@ -165,3 +164,8 @@ nodejs + vue 全栈一站式中后台解决方案
 │   │   ├── types  类型文件
 └── └── └── vite.config.ts vite配置文件
 ```
+## 赞助
+
+如果能帮到您欢迎打赏。赞助时务必备注github name 后期将更新到赞助列表中。
+
+![](./payCode.jpg)
