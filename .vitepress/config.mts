@@ -24,7 +24,7 @@ export default defineConfig({
         text: "前端文档",
         items: [
           { text: "管理后台", link: "/client/admin/guide/index" },
-          { text: "前台", link: "/client/admin/guide/index" },
+          { text: "前台", link: "/client/index/guide" },
         ],
       },
       {
